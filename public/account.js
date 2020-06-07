@@ -180,17 +180,16 @@ async function handleCancledTicket(){
     })
     .then(res => res.json())
     .then(res =>{
-      document.querySelector('#myModal').style.display = 'none'
-      document.querySelector('#myModal2').style.display = 'block'
-      console.log(res);
-      isClick = false;
-      $('#change-ticket').click()
+        if(res.is){
+        document.querySelector('#myModal').style.display = 'none'
+        document.querySelector('#myModal2').style.display = 'block'
+        console.log(res);
+        isClick = false;
+        $('#change-ticket').click()
+      }
+      else alert("Đã xảy ra lỗi. Thử lại")
     })
-    document.querySelector('#myModal').style.display = 'none'
-      document.querySelector('#myModal2').style.display = 'block'
-      console.log(res);
-      isClick = false;
-      $('#change-ticket').click()
+    
 
      
 }
